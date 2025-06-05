@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36202.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionSickness", "MotionSickness\MotionSickness.csproj", "{761C6CC5-6A02-41F8-AD49-ACF40DAACD8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{761C6CC5-6A02-41F8-AD49-ACF40DAACD8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{761C6CC5-6A02-41F8-AD49-ACF40DAACD8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{761C6CC5-6A02-41F8-AD49-ACF40DAACD8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{761C6CC5-6A02-41F8-AD49-ACF40DAACD8B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B1D8825-FE48-4FF0-A504-C245B4C5514C}
+	EndGlobalSection
+EndGlobal
