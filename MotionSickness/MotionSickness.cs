@@ -15,6 +15,7 @@ namespace MotionSickness {
         internal static ConfigEntry<float> MaxFOV;
         internal static ConfigEntry<bool> DisableMask;
         internal static ConfigEntry<bool> HideSeamoth;
+        internal static ConfigEntry<float> WaveHeight;
 
         public void Awake() {
             DisableShake = Config.Bind("Camera", "Disable Shake", true, "Camera shake effect in certain scenes\nFor example, the shake after executing 'camshake' on the console");
@@ -23,6 +24,7 @@ namespace MotionSickness {
             MaxFOV = Config.Bind("Camera", "Max FOV", 120f, new ConfigDescription("Customize maximum FOV value", new AcceptableValueRange<float>(90f, 180f)));
             DisableMask = Config.Bind("Camera", "Disable Mask", true, "Mask on the edge of the screen");
             HideSeamoth = Config.Bind("Renderer", "Hide Seamoth When Entered", false, "Better visibility when driving Seamoth");
+            WaveHeight = Config.Bind("Renderer", "Wave Height", 300f, new ConfigDescription("When surfacing, looking down at the waves may make you feel dizzy\nLowering the wave height may improve this\nOnly works when the 'Water quality' is 'Medium'", new AcceptableValueRange<float>(0f, 300f)));
 
             var harmony = new Harmony("com.ex3124.MotionSickness");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
@@ -90,6 +92,19 @@ namespace MotionSickness {
                         renderer.enabled = !__instance.playerFullyEntered;
                 }
             }
+            return true;
+        }
+    }
+
+    [HarmonyPatch(typeof(WaterSurface))]
+    [HarmonyPatch("DoUpdate")]
+    public static class WaterWave
+    {
+        [HarmonyPrefix]
+        public static bool Prefix(WaterSurface __instance)
+        {
+            FieldInfo maxDisplacementField = typeof(WaterSurface).GetField("maxDisplacement", BindingFlags.NonPublic | BindingFlags.Instance);
+            maxDisplacementField.SetValue(__instance, new Vector3(100f, Plugin.WaveHeight.Value, 100f));
             return true;
         }
     }
