@@ -3,7 +3,7 @@
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <ProjectGuid>{761C6CC5-6A02-41F8-AD49-ACF40DAACD8B}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <OutputPath>output\$(Configuration)\</OutputPath>
+    <OutputPath>..\output\$(Configuration)\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DefineConstants>DEBUG</DefineConstants>
@@ -14,19 +14,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\0Harmony.dll</HintPath>
+      <HintPath>..\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx">
-      <HintPath>..\..\BepInEx.dll</HintPath>
+      <HintPath>..\BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\UnityEngine.dll</HintPath>
+      <HintPath>..\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Compile Include="MotionSickness.cs" />
   </ItemGroup>
